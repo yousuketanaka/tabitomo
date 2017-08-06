@@ -5,7 +5,7 @@
     <!-- 自分のプロフィールへのリンク -->
     <%= link_to "自分のプロフィールを確認する", user_path(current_user), class: "btn btn-default btn-full" %>
     </div>
-
+    <%= render 'partial/deviseErrorMsg' %>
     <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">プロフィールを編集</div>
