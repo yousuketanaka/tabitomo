@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809021725) do
+ActiveRecord::Schema.define(version: 20170809091442) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20170809021725) do
     t.string   "resident_city"
     t.string   "job"
     t.string   "language_1"
+    t.string   "phone_number"
+    t.string   "description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
