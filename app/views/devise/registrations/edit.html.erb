@@ -12,7 +12,6 @@
           <div class="panel-body">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   　　　　    　　<%= render 'partial/deviseErrorMsg' %>
-              <hr>
               <p class="text-center"><strong><span class="basicinfo-title">基本情報</span></strong></p>
               <hr>
               <div class="form-group">
@@ -35,7 +34,6 @@
                 <%= f.label :新しいパスワードの確認 %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
               </div>
-              
               <hr>
               <p class="text-center"><strong><span class="basicinfo-title">基本情報の追加</span></strong></p>
               <hr>
