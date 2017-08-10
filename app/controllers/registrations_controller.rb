@@ -1,4 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
+  
+  def edit
+    @country = ISO3166::Country.find_country_by_name('japan')
+  end
 
   protected
 

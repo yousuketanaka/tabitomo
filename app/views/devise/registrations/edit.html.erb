@@ -12,6 +12,9 @@
           <div class="panel-body">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   　　　　    　　<%= render 'partial/deviseErrorMsg' %>
+              <hr>
+              <p class="text-center"><strong><span class="basicinfo-title">基本情報</span></strong></p>
+              <hr>
               <div class="form-group">
                 <%= f.label :名前 %><span class="required">必須</span><br />
                 <%= f.text_field :name, autofocus: true, :placeholder => "名前", :class => 'form-control' %>
@@ -34,44 +37,49 @@
               </div>
               
               <hr>
-              <p class="text-center"><strong>基本情報の追加</strong></p>
+              <p class="text-center"><strong><span class="basicinfo-title">基本情報の追加</span></strong></p>
               <hr>
               
               <div class="form-group">
-              <%= f.label :年齢 %><span class="required">必須</span><br />
-              <%= f.text_field :age, autofocus: true, :placeholder => "年齢", :class => 'form-control' %>
-            </div>
+                <%= f.label :年齢 %><span class="required">必須</span><br />
+                <%= f.select :age, (18..99), {prompt:"年齢を選択してください"}, {required: 'true', autofocus: 'true', class: "form-control" } %>
+              </div>
 
-            <div class="form-group">
-              <%= f.label :性別 %><span class="required">必須</span><br/>
-              
-            </div>
+              <div class="form-group">
+                <%= f.label :性別 %><span class="required">必須</span><br/>
+                <%= f.select :sex, [["男性","男性"], ["女性","女性"], ["どちらでもない","どちらでもない"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+              </div>
 
-            <div class="form-group">
-              <%= f.label :国籍 %><span class="required">必須</span><br/>
-              <%= f.text_field :nationality, :placeholder => "国籍", :class => 'form-control' %>
-            </div>
+              <div class="form-group">
+                <%= f.label :国籍 %><span class="required">必須</span><br/>
+                <%= f.country_select :nationality, options_for_select(""), {prompt:"国を選択してください"}, { autofocus: 'true', class: 'form-control'} %>
+              </div>
             
-            <div class="form-group">
-              <%= f.label :居住国 %><span class="required">必須</span><br/>
-              <%= f.text_field :resident_country, :placeholder => "居住国", :class => 'form-control' %>
-            </div>
+              <div class="form-group">
+                <%= f.label :居住国 %><span class="required">必須</span><br/>
+                <%= f.country_select :resident_country, options_for_select(""), {prompt:"現在住んでいる国を選択してください"}, { autofocus: 'true', class: 'form-control'} %>
+              </div>
             
-            <div class="form-group">
-              <%= f.label :居住都市 %><span class="required">必須</span><br/>
-              <%= f.text_field :resident_city, :placeholder => "居住都市", :class => 'form-control' %>
-            </div>
-            <div class="form-group">
-　　　　　　  <%= f.label :使用言語 %><span class="required">必須</span><br/>
-              <%= f.text_field :language_1, :placeholder => "言語", :class => 'form-control' %>
-            </div>
-              
-              
-  
+              <div class="form-group">
+                <%= f.label :居住都市 %><span class="required">必須</span><br/>
+                <%= f.text_field :resident_city, :placeholder => "居住都市", :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :使用言語 %><span class="required">必須</span><br/>
+                <%= f.text_field :language_1, :placeholder => "言語", :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :イメージ画像 %><span class="required">必須</span><br/>
+                <%= f.file_field :image,:class => 'form-control' %>
+                </div>
+              <div class="form-group">
+                <%= f.label :自己紹介 %><br/>
+                <%= f.text_area :description, rows: 5, cols: 25,  :placeholder => "自己紹介文", :class => 'form-control' %>
+              </div>
               <div class="actions">
                 <%= f.submit "基本情報を更新", :class => "btn btn-primary" %>
               </div>
-            <% end %>
+              <% end %>
           </div>
       </div>
     </div><!--col-md-9-->
