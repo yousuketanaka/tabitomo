@@ -174,3 +174,17 @@ body {
 .sidebar-nav .navbar-toggle {
     background-color: #337ab7;
 }
+
+.required{
+  border: 1px solid #ec6d71;
+  background-color: #ec6d71;
+  padding: 3px 8px;
+  color: #fff;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.form-group{
+    margin-bottom: 30px;
+}

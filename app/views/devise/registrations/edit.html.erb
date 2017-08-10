@@ -9,88 +9,71 @@
     <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">基本情報を編集</div>
-        <div class="panel-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-　　　　　　<%= render 'partial/deviseErrorMsg' %>
-            <div class="form-group">
-              <%= f.text_field :name, autofocus: true, :placeholder => "名前", :class => 'form-control' %>
-            </div>
-
-            <div class="form-group">
-              <%= f.email_field :email, :placeholder => "Email", :class => 'form-control' %>
-            </div>
-
-            <div class="form-group">
-              <%= f.text_field :phone_number, :placeholder => "電話番号", :class => 'form-control' %>
-            </div>
-
-            <div class="form-group">
-              <%= f.text_area :description, rows: 5, cols: 25,  :placeholder => "自己紹介文", :class => 'form-control' %>
-            </div>
-
-            <div class="form-group">
-              <%= f.file_field :image,:class => 'form-control' %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :新しいパスワード %> <i>(変更しない場合は空欄で構いません)</i><br />
-              <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :新しいパスワードの確認 %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
-            </div>
-
-            <div class="actions">
-              <%= f.submit "基本情報を更新", :class => "btn btn-primary" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">プロフィール情報を追加</div>
-        <div class="panel-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-　　　　　　<%= render 'partial/deviseErrorMsg' %>
-            <div class="form-group">
-              <%= f.label :年齢 %><br />
+          <div class="panel-body">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  　　　　    　　<%= render 'partial/deviseErrorMsg' %>
+              <div class="form-group">
+                <%= f.label :名前 %><span class="required">必須</span><br />
+                <%= f.text_field :name, autofocus: true, :placeholder => "名前", :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Email %><span class="required">必須</span><br />
+                <%= f.email_field :email, :placeholder => "Email", :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :電話番号 %><br />
+                <%= f.text_field :phone_number, :placeholder => "電話番号", :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :新しいパスワード %> <i>(変更しない場合は空欄で構いません)</i><br />
+                <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :新しいパスワードの確認 %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+              </div>
+              
+              <hr>
+              <p class="text-center"><strong>基本情報の追加</strong></p>
+              <hr>
+              
+              <div class="form-group">
+              <%= f.label :年齢 %><span class="required">必須</span><br />
               <%= f.text_field :age, autofocus: true, :placeholder => "年齢", :class => 'form-control' %>
             </div>
 
             <div class="form-group">
-              <%= f.label :性別 %><br />
-              <%= f.email_field :sex, :placeholder => "性別", :class => 'form-control' %>
+              <%= f.label :性別 %><span class="required">必須</span><br/>
+              
             </div>
 
             <div class="form-group">
-              <%= f.label :国籍 %><br />
+              <%= f.label :国籍 %><span class="required">必須</span><br/>
               <%= f.text_field :nationality, :placeholder => "国籍", :class => 'form-control' %>
             </div>
             
             <div class="form-group">
-              <%= f.label :居住国 %><br />
+              <%= f.label :居住国 %><span class="required">必須</span><br/>
               <%= f.text_field :resident_country, :placeholder => "居住国", :class => 'form-control' %>
             </div>
             
             <div class="form-group">
-              <%= f.label :居住都市 %><br />
+              <%= f.label :居住都市 %><span class="required">必須</span><br/>
               <%= f.text_field :resident_city, :placeholder => "居住都市", :class => 'form-control' %>
             </div>
-
-　　　　　　<div class="form-group">
-　　　　　　  <%= f.label :使用言語 %><br />
+            <div class="form-group">
+　　　　　　  <%= f.label :使用言語 %><span class="required">必須</span><br/>
               <%= f.text_field :language_1, :placeholder => "言語", :class => 'form-control' %>
             </div>
-
-            <div class="actions">
-              <%= f.submit "プロフィール情報を更新", :class => "btn btn-primary" %>
-            </div>
-          <% end %>
-        </div>
+              
+              
+  
+              <div class="actions">
+                <%= f.submit "基本情報を更新", :class => "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
       </div>
-      
-    </div>    
-  </div>  
-</div>
+    </div><!--col-md-9-->
+  </div>  <!--row-->
+</div> <!--container-->
