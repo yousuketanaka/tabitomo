@@ -1,10 +1,4 @@
 class User < ActiveRecord::Base
-  
-  validates :sex, presence:true
-  validates :nationality, presence:true
-  validates :resident_country, presence:true
-  validates :resident_city, presence:true
-  validates :resident_city, presence:true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
