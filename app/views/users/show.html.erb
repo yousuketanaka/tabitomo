@@ -1,46 +1,131 @@
 <%= render 'partial/navbar' %>
 
 <!-- 認証チェックマーク -->
+<script type="text javascripts">
+	$(function(){
+		<% if !@user.email.blank? %>
+		  $("#ver-email")('class', 'vertification-checked');
+		<% end %>
+		
+		<% if !@user.phone_number.blank? %>
+		  $("#ver-tel")('class', 'vertification-checked');
+		<% end %>
+		
+		<% if @user.provider == "facebook" %>
+		  $("#ver-facebook")('class', 'vertification-checked');
+		<% end %>
+	})
+</script>
 
-
-<div class="container">
-	<div class="row">
-		<div class="col-lg-3 col-md-4">
-			<div class="user-profile row-space-4 text-center">
-				<%= image_tag @user.image, class: "profile-full img-circle" %>
-			</div>
-
-			<!-- send message ボタン -->
-      <% if current_user != @user %>
-        <div class="row-space-2">
-          <%= link_to "メッセージを送る", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post',class: "btn btn-danger btn-full" %>
-        </div>
-      <% end %>
-
-			<div class="panel panel-default verifications hidden-xs hidden-sm">
-				<div class="panel-heading">
-					認証済みID
+<section>
+	<div class="container" style="margin-top: 30px;">
+		<div class="profile-head">
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<%= image_tag @user.image, class: "img-responsive profile-full img-circle" %>
+			    <h6><%= @user.name %></h6>
+			</div><!--col-md-4 col-sm-4 col-xs-12 close-->
+		    <div class="col-md-5 col-sm-5 col-xs-12">
+			    <h5><%= @user.name %></h5>
+			    <!--認証チェックマーク-->
+			    <div class="verifications hidden-xs hidden-sm">
+			    	<p>認証済みID</p>
+			    	<ul>
+			    		<li id="ver-email">メールアドレス</li>
+			    		<li id="ver-tel">電話番号</li>
+			    		<li id="ver-facebook">Facebook</li>
+			    	</ul>
 				</div>
-				<div class="panel-body">
-					<div id="ver-email">
-						メールアドレス
-					</div>
-					<br>
-					<div id="ver-tel">
-						電話番号
-					</div>
-					<br>
-					<div id="ver-facebook">
-						Facebook
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="profile-page col-lg-9 col-md-8 col-sm-12">
-			<h1 class="text-center">プロフィール</h1>
-			<p>自己紹介</p>
-			
-		</div>
-	</div>  	
-</div>
+			    
+		    </div><!--col-md-5 col-sm-5 col-xs-12-->
+		</div><!--profile-head close-->
+	</div><!--container close-->
+	
+	<div id="sticky" class="container">
+	    <!-- Nav tabs -->
+	    <ul class="nav nav-tabs nav-menu" role="tablist">
+	      <li class="active">
+	          <i class="fa fa-male"><%= link_to "基本情報", user_path(current_user) %></i>
+	      </li>
+	      <li>
+	          <i class="fa fa-key"><%= link_to "基本情報編集", edit_user_registration_path(current_user) %></i>
+	      </li>
+	    </ul><!--nav-tabs close-->
+	    
+	    <!-- Tab panes -->
+	    <div class="tab-content">
+	      <div class="tab-pane fade active in" id="profile">
+	        <div class="container">
+	          <div class="row">
+	          	<div class="col-md-12">
+	                <h4 class="pro-title">PROFILE</h4>
+	            </div><!--col-md-12 close-->
+	            <hr>
+	            <div class="col-md-5">
+	            	<div class="table-responsive responsiv-table">
+	            		<table class="table bio-table">
+	            			<tbody>
+							     <tr>      
+							        <td><span class="glyphicon glyphicon-pushpin"></span>NAME</td>
+							        <td><%= @user.name %></td> 
+							     </tr>
+							     <tr>    
+							        <td><span class="glyphicon glyphicon-user"></span>GENDER</td>
+							        <td><%= @user.sex %></td>       
+							    </tr>
+							     <tr>    
+							        <td><span class="glyphicon glyphicon-th"></span>AGE</td>
+							        <td><%= @user.age %></td>       
+							    </tr>
+							    <tr>    
+							        <td><span class="glyphicon glyphicon-map-marker"></span>COUNTRY</td>
+							        <td><%= @user.nationality %></td>       
+							    </tr>
+							    <tr>
+							        <td><span class="glyphicon glyphicon-briefcase"></span>OCCUPATION</td>
+							        <td><%= @user.job %></td> 
+							     </tr>
+							</tbody>
+						</table>
+					</div><!--table-responsive close-->
+				</div><!--col-md-6 close-->
+	            <div class="col-md-7">
+	                <div class="table-responsive responsiv-table">
+	                   <table class="table bio-table">
+					      <tbody>
+					      	 <tr>    
+						        <td><span class="glyphicon glyphicon-phone"></span> MOBILE</td>
+						        <td><%= @user.phone_number %></td>       
+						     </tr>
+						     <tr>  
+						        <td><span class="glyphicon glyphicon-envelope"></span>EMAIL</td>
+						        <td><%= @user.email %></td> 
+						     </tr>
+						     <tr>    
+						        <td><span class="glyphicon glyphicon-home"></span>RESIDENT COUNTRY</td>
+						        <td><%= @user.resident_country %></td>       
+						     </tr>
+						     <tr>    
+						        <td><span class="glyphicon glyphicon-globe"></span>RESIDENT CITY</td>
+						        <td><%= @user.resident_city %></td>       
+						     </tr>
+						     <tr>
+						        <td><span class="glyphicon glyphicon-tint"></span>LANGUAGE</td>
+						        <td><%= @user.language_1 %></td> 
+						     </tr>
+						  </tbody>
+					   </table>
+					</div><!--table-responsive close-->
+				</div><!--col-md-6 close-->
+				<div class="col-sm-11" style="float:left;">
+		            <div class="hve-pro">
+		            	<h5><span class="hve-pro-underbar">自己紹介</span></h5>
+						<p><%= @user.description %></p>
+					</div><!--hve-pro close-->
+				</div><!--col-sm-11 close-->
+	            <br clear="all"/>
+	          </div><!--row close-->
+	        </div><!--container close-->
+	      </div><!--tab-pane close-->
+	    </div><!--tab-content-->
+	</div><!--container-->
+</section><!--section close-->
