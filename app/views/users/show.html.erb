@@ -1,20 +1,20 @@
 <%= render 'partial/navbar' %>
 
 <!-- 認証チェックマーク -->
-<script type="text javascripts">
+<script type="text/javascript">
 	$(function(){
 		<% if !@user.email.blank? %>
-		  $("#ver-email")('class', 'vertification-checked');
+			$("#ver-email").attr('class','vertification-checked');
 		<% end %>
-		
+
 		<% if !@user.phone_number.blank? %>
-		  $("#ver-tel")('class', 'vertification-checked');
+			$("#ver-tel").attr('class','vertification-checked');
 		<% end %>
-		
+
 		<% if @user.provider == "facebook" %>
-		  $("#ver-facebook")('class', 'vertification-checked');
+			$("#ver-facebook").attr('class','vertification-checked');
 		<% end %>
-	})
+	});
 </script>
 
 <section>
@@ -28,7 +28,7 @@
 			    <h5><%= @user.name %></h5>
 			    <!--認証チェックマーク-->
 			    <div class="verifications hidden-xs hidden-sm">
-			    	<p>認証済みID</p>
+			    	<p><span class="glyphicon glyphicon-ok"></span>認証済みID</p>
 			    	<ul>
 			    		<li id="ver-email">メールアドレス</li>
 			    		<li id="ver-tel">電話番号</li>
@@ -42,12 +42,12 @@
 	
 	<div id="sticky" class="container">
 	    <!-- Nav tabs -->
-	    <ul class="nav nav-tabs nav-menu" role="tablist">
+	    <ul class="profile-nav-btn nav nav-tabs nav-menu" role="tablist">
 	      <li class="active">
-	          <i class="fa fa-male"><%= link_to "基本情報", user_path(current_user) %></i>
+	          <i class="fa fa-male"><%= link_to "プロフィール", user_path(current_user) %></i>
 	      </li>
 	      <li>
-	          <i class="fa fa-key"><%= link_to "基本情報編集", edit_user_registration_path(current_user) %></i>
+	          <i class="fa fa-key"><%= link_to "プロフィール編集", edit_user_registration_path(current_user) %></i>
 	      </li>
 	    </ul><!--nav-tabs close-->
 	    
