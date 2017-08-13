@@ -1,0 +1,132 @@
+<%= render 'partial/navbar' %>
+
+<!-- 認証チェックマーク -->
+<script type="text/javascript">
+	$(function(){
+		<% if !@user.email.blank? %>
+			$("#ver-email").attr('class','vertification-checked');
+		<% end %>
+
+		<% if !@user.phone_number.blank? %>
+			$("#ver-tel").attr('class','vertification-checked');
+		<% end %>
+
+		<% if @user.provider == "facebook" %>
+			$("#ver-facebook").attr('class','vertification-checked');
+		<% end %>
+	});
+</script>
+
+<section>
+	<div class="container">
+		<div class="row content">
+			<div class="col-md-8">
+				<!-- resumt -->
+		        <div class="profile-card">
+		            <div class="upper-part">
+		                  <div class="row">
+		                      <div class="col-md-4 col-xs-12 col-sm-5 col-lg-4">
+		                          <%= image_tag @user.image, class: "img-responsive profile-full img-circle" %>
+		                      </div>
+		                      <div class="col-md-8 col-xs-12 col-sm-7 col-lg-8">
+		                          <div class="container name-line">
+		                            <h2><%= @user.name %></h2>
+		                          </div>
+		                          <hr>
+		                          <ul class="container details">
+		                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
+		                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
+		                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
+		                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</p></a>
+		                          </ul>
+		                      </div>
+		                  </div><!--row-->
+	                </div>
+	                  
+	                <div class="lower-part">
+	                  <table class="table table-user-information">
+	                    <tbody>
+	                      <tr>
+	                        <td><span class="glyphicon glyphicon-pushpin"></span>NAME:</td>
+	                        <td><%= @user.name %></td>
+	                      </tr>
+	                      <tr>
+	                        <td>Hire date:</td>
+	                        <td>06/23/2013</td>
+	                      </tr>
+	                      <tr>
+	                        <td>Date of Birth</td>
+	                        <td>01/24/1988</td>
+	                      </tr>
+	                   
+	                         <tr>
+	                             <tr>
+	                        <td>Gender</td>
+	                        <td>Female</td>
+	                      </tr>
+	                        <tr>
+	                        <td>Home Address</td>
+	                        <td>Kathmandu,Nepal</td>
+	                      </tr>
+	                      <tr>
+	                        <td>Email</td>
+	                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+	                      </tr>
+	                        <td>Phone Number</td>
+	                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+	                        </td>
+	                           
+	                      </tr>
+	                     
+	                    </tbody>
+	                  </table>
+	                  
+	                  <a href="#" class="btn btn-primary">My Sales Performance</a>
+	                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
+	                </div> <!--lower-part-->
+                </div><!--profile-card-->
+			</div><!--col-md-8-->
+			<div class="col-md-3">
+				<a href="mail-compose.html" class="btn btn-danger btn-block btn-compose-email">Compose Email</a>
+		        <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
+		            <li class="active">
+		                <a href="#mail-inbox.html">
+		                    <i class="fa fa-inbox"></i> Inbox  <span class="label pull-right">7</span>
+		                </a>
+		            </li>
+		            <li>
+		                <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i> Send Mail</a>
+		            </li>
+		            <li>
+		                <a href="#"><i class="fa fa-certificate"></i> Important</a>
+		            </li>
+		            <li>
+		                <a href="#">
+		                    <i class="fa fa-file-text-o"></i> Drafts <span class="label label-info pull-right inbox-notification">35</span>
+		                </a>
+		            </li>
+		            <li><a href="#"> <i class="fa fa-trash-o"></i> Trash</a></li>
+		        </ul><!-- /.nav -->
+		
+		        <h5 class="nav-email-subtitle">More</h5>
+		        <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+		            <li>
+		                <a href="#">
+		                    <i class="fa fa-folder-open"></i> Promotions  <span class="label label-danger pull-right">3</span>
+		                </a>
+		            </li>
+		            <li>
+		                <a href="#">
+		                    <i class="fa fa-folder-open"></i> Job list
+		                </a>
+		            </li>
+		            <li>
+		                <a href="#">
+		                    <i class="fa fa-folder-open"></i> Backup
+		                </a>
+		            </li>
+		        </ul><!-- /.nav -->
+			</div><!--col-md-3-->
+		</div><!--row-->
+	</div><!--container-->
+</section><!--section close-->

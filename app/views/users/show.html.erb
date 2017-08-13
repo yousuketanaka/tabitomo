@@ -18,114 +18,123 @@
 </script>
 
 <section>
-	<div class="container" style="margin-top: 30px;">
-		<div class="profile-head">
+	<div class="container">
+		<div class="row content">
+			<div class="col-md-8 col-sm-8 col-xs-12">
+				<div class="profile-card">
+					<div class="row">
+                      <div class="col-md-4 col-xs-12 col-sm-5 col-lg-4">
+	                      <div class="imagearea">
+	                          <%= image_tag @user.image, class: "img-responsive profile-full img-circle" %>
+	                      </div><!--imagearea-->
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-7 col-lg-8">
+                          <div class="container name-line">
+                            <h2><%= @user.name %></h2>
+                          </div>
+                          <div class="simple-info">
+                          	<ul>
+                          		<li><span class="glyphicon glyphicon-map-marker"></span><%= @user.resident_city %></li>
+                          		<li><span class="glyphicon glyphicon-briefcase"></span><%= @user.job %></li>
+                          	</ul>
+                          </div>
+                      </div>
+                  </div><!--row-->
+				</div><!--profile-card-->
+				<div class="profile-info panel panel-default">
+		            <div class="panel-heading">
+		              <h3 class="panel-title text-center">プロフィール情報</h3>
+		            </div>
+		            <div class="panel-body">
+						<div class="profile-details">
+							<table class="table table table-hover table-user-information">
+			                    <tbody>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-pencil"></span>NAME</td>
+			                        <td>:<%= @user.name %></td>
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-user"></span>GENDER</td>
+			                        <td>:<%= @user.sex %></td>
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-th"></span>AGE</td>
+							        <td>:<%= @user.age %>歳</td> 
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-map-marker"></span>COUNTRY</td>
+							        <td>:<%= @user.nationality %></td>  
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-home"></span>RESIDENT COUNTRY</td>
+						            <td>:<%= @user.resident_country %></td> 
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-globe"></span>RESIDENT CITY</td>
+						            <td>:<%= @user.resident_city %></td> 
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-briefcase"></span>OCCUPATION</td>
+							        <td>:<%= @user.job %></td>
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-tint"></span>LANGUAGE</td>
+						            <td>:<%= @user.language_1 %></td>
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-phone"></span> MOBILE</td>
+						            <td>:<%= @user.phone_number %></td> 
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-envelope"></span>EMAIL</td>
+						            <td>:<%= @user.email %></td>
+			                      </tr>
+			                      <tr>
+			                        <td><span class="glyphicon glyphicon-comment"></span>自己紹介</td>
+						            <td>:<%= @user.description %></td>
+			                      </tr>
+			                    </tbody>
+			                  </table>
+						</div><!--profile-details-->
+					</div><!--panel-body-->
+				</div><!--profile-info-->
+			</div><!--col-md-8 col-sm-8 col-xs-12-->
 			<div class="col-md-4 col-sm-4 col-xs-12">
-				<%= image_tag @user.image, class: "img-responsive profile-full img-circle" %>
-			    <h6><%= @user.name %></h6>
-			</div><!--col-md-4 col-sm-4 col-xs-12 close-->
-		    <div class="col-md-5 col-sm-5 col-xs-12">
-			    <h5><%= @user.name %></h5>
-			    <!--認証チェックマーク-->
-			    <div class="verifications hidden-xs hidden-sm">
-			    	<p><span class="glyphicon glyphicon-ok"></span>認証済みID</p>
-			    	<ul>
-			    		<li id="ver-email">メールアドレス</li>
-			    		<li id="ver-tel">電話番号</li>
-			    		<li id="ver-facebook">Facebook</li>
-			    	</ul>
-				</div>
-			    
-		    </div><!--col-md-5 col-sm-5 col-xs-12-->
-		</div><!--profile-head close-->
-	</div><!--container close-->
-	
-	<div id="sticky" class="container">
-	    <!-- Nav tabs -->
-	    <ul class="profile-nav-btn nav nav-tabs nav-menu" role="tablist">
-	      <li class="active">
-	          <i class="fa fa-male"><%= link_to "プロフィール", user_path(current_user) %></i>
-	      </li>
-	      <li>
-	          <i class="fa fa-key"><%= link_to "プロフィール編集", edit_user_registration_path(current_user) %></i>
-	      </li>
-	    </ul><!--nav-tabs close-->
-	    
-	    <!-- Tab panes -->
-	    <div class="tab-content">
-	      <div class="tab-pane fade active in" id="profile">
-	        <div class="container">
-	          <div class="row">
-	          	<div class="col-md-12">
-	                <h4 class="pro-title">PROFILE</h4>
-	            </div><!--col-md-12 close-->
-	            <hr>
-	            <div class="col-md-5">
-	            	<div class="table-responsive responsiv-table">
-	            		<table class="table bio-table">
-	            			<tbody>
-							     <tr>      
-							        <td><span class="glyphicon glyphicon-pushpin"></span>NAME</td>
-							        <td><%= @user.name %></td> 
-							     </tr>
-							     <tr>    
-							        <td><span class="glyphicon glyphicon-user"></span>GENDER</td>
-							        <td><%= @user.sex %></td>       
-							    </tr>
-							     <tr>    
-							        <td><span class="glyphicon glyphicon-th"></span>AGE</td>
-							        <td><%= @user.age %></td>       
-							    </tr>
-							    <tr>    
-							        <td><span class="glyphicon glyphicon-map-marker"></span>COUNTRY</td>
-							        <td><%= @user.nationality %></td>       
-							    </tr>
-							    <tr>
-							        <td><span class="glyphicon glyphicon-briefcase"></span>OCCUPATION</td>
-							        <td><%= @user.job %></td> 
-							     </tr>
-							</tbody>
-						</table>
-					</div><!--table-responsive close-->
-				</div><!--col-md-6 close-->
-	            <div class="col-md-7">
-	                <div class="table-responsive responsiv-table">
-	                   <table class="table bio-table">
-					      <tbody>
-					      	 <tr>    
-						        <td><span class="glyphicon glyphicon-phone"></span> MOBILE</td>
-						        <td><%= @user.phone_number %></td>       
-						     </tr>
-						     <tr>  
-						        <td><span class="glyphicon glyphicon-envelope"></span>EMAIL</td>
-						        <td><%= @user.email %></td> 
-						     </tr>
-						     <tr>    
-						        <td><span class="glyphicon glyphicon-home"></span>RESIDENT COUNTRY</td>
-						        <td><%= @user.resident_country %></td>       
-						     </tr>
-						     <tr>    
-						        <td><span class="glyphicon glyphicon-globe"></span>RESIDENT CITY</td>
-						        <td><%= @user.resident_city %></td>       
-						     </tr>
-						     <tr>
-						        <td><span class="glyphicon glyphicon-tint"></span>LANGUAGE</td>
-						        <td><%= @user.language_1 %></td> 
-						     </tr>
-						  </tbody>
-					   </table>
-					</div><!--table-responsive close-->
-				</div><!--col-md-6 close-->
-				<div class="col-sm-11" style="float:left;">
-		            <div class="hve-pro">
-		            	<h5><span class="hve-pro-underbar">自己紹介</span></h5>
-						<p><%= @user.description %></p>
-					</div><!--hve-pro close-->
-				</div><!--col-sm-11 close-->
-	            <br clear="all"/>
-	          </div><!--row close-->
-	        </div><!--container close-->
-	      </div><!--tab-pane close-->
-	    </div><!--tab-content-->
+				<div class="select-list">
+					<div class="profile-sidebar">
+						<!-- SIDEBAR USERPIC -->
+						<div class="profile-userpic">
+							<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
+		                   
+		                    
+						</div>
+						<!-- END SIDEBAR USERPIC -->
+						<!-- SIDEBAR USER TITLE -->
+						<div class="profile-usertitle">
+							<div class="profile-usertitle-name">
+								<span class="hidden-xs">PROFILE 管理</span>
+							</div>
+							<div class="profile-usertitle-job">
+							</div>
+						</div>
+						<!-- END SIDEBAR USER TITLE -->
+						<!-- SIDEBAR MENU -->
+						<div class="profile-usermenu">
+							<ul class="nav">
+								<li class="active">
+									<%= link_to "プロフィール", user_path(current_user), class: "glyphicon glyphicon-home" %>
+								</li>
+								<li>
+									<%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %>
+								</li>
+								<li>
+								    <%= link_to "リスティング作成", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %>
+								</li>
+							</ul>
+						</div>
+						<!-- END MENU -->
+				</div><!--select-list-->
+			</div>
+		</div><!--row-->
 	</div><!--container-->
 </section><!--section close-->
