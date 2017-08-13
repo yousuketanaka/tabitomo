@@ -17,6 +17,7 @@
 	});
 </script>
 
+
 <section>
 	<div class="container">
 		<div class="row content">
@@ -123,8 +124,8 @@
 						<div class="profile-usermenu">
 							<ul class="nav">
 								<li class="active"><%= link_to "プロフィール", user_path(current_user), class: "glyphicon glyphicon-home" %></li>
-								<li><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %></li>
-								<li><%= link_to "リスティング作成", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %></li>
+								<li class="active"><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %></li>
+								<li class="active"><%= link_to "リスティング作成", new_listing_path, class: "glyphicon glyphicon-user" %></li>
 							</ul>
 						</div>
 						<!-- END MENU -->

@@ -1,0 +1,85 @@
+<%= render 'partial/navbar' %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                  <div class="text-center">
+                      <span style="font-size:24px;">基本データの編集</span>
+                  </div>
+              </div>
+    
+              <div class="panel-body">           
+                  <%= form_for @listing do |f| %>
+                    <div class="row">
+    					<div class="col-md-12 select">
+    						<div class="form-group">
+    							<label>使用できる言語</label>
+    							<%= f.text_field :language_2, autofocus: true, :placeholder => "使用できる言語を書いてください。", :class => 'form-control' %>
+    						</div>
+    					</div>
+    				</div>
+    				<br>
+    
+    				<div class="row">
+    					<div class="col-md-12 select">
+    						<div class="form-group">
+    							<label>言語のレベル</label>
+    							<%= f.select :language_level_2, [["母国語レベル","母国語レベル"], ["ビジネスレベル","ビジネスレベル"], ["日常会話レベル","日常会話レベル"], ["初級レベル","初級レベル"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+    						</div>
+    					</div>
+    				</div>
+    				<br>
+    
+    				<div class="row">
+    					<div class="col-md-12 select">
+    						<div class="form-group">
+    							<label>得意な話題</label>
+    							<%= f.text_area :favorite_topic, rows: 5, cols: 25,  :placeholder => "得意な話題", :class => 'form-control' %>
+    						</div>
+    					</div>
+    				</div>
+    				<br>
+    				
+    				<div class="row">
+    					<div class="col-md-12 select">
+    						<div class="form-group">
+    							<label>私が自慢できること</label>
+    							<%= f.text_area :self_praise, rows: 5, cols: 25,  :placeholder => "あなたが自慢できることを書いて、自分をアピールしましょう。", :class => 'form-control' %>
+    						</div>
+    					</div>
+    				</div>
+    				<br>
+    				
+    				<div class="row">
+    					<div class="col-md-12 select">
+    						<div class="form-group">
+    							<label>現在の状況</label>
+    							<%= f.text_area :current_situation, rows: 5, cols: 25,  :placeholder => "あなたの現在の状況を書いてみましょう。", :class => 'form-control' %>
+    						</div>
+    					</div>
+    				</div>
+    				<br>
+    				
+    				<div class="row">
+    					<div class="col-md-12 select">
+    						<div class="form-group">
+    							<label>私の目標</label>
+    							<%= f.text_area :my_goal, rows: 5, cols: 25,  :placeholder => "何か目標があれば、それを書いて、アピールの一つとしましょう。", :class => 'form-control' %>
+    						</div>
+    					</div>
+    				</div>
+    				<br>
+                    <div class="actions">
+                        <%= f.submit "更新", class: "btn btn-danger" %>
+                    </div>
+                  <% end %>
+              </div>
+          </div>
+      　</div>
+      　<div class="col-md-3">
+            <!-- vertical-navbar -->
+            <%= render 'partial/verticalnavbar'%>
+        </div>
+    </div>
+</div>

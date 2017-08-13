@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  language_level_2: MyString
+  language_2: MyString
+  language_level_2: MyString
+  address: MyString
+  service_type: MyString
+  resident_years: 1
+  price_setting: 1
+  favorite_topic: MyText
+  self_praise: MyString
+  current_situation: MyText
+  my_goal: MyText
+  my_plan: MyText
+  active: false
+  active: false
+  user_id: 
+
+two:
+  language_level_2: MyString
+  language_2: MyString
+  language_level_2: MyString
+  address: MyString
+  service_type: MyString
+  resident_years: 1
+  price_setting: 1
+  favorite_topic: MyText
+  self_praise: MyString
+  current_situation: MyText
+  my_goal: MyText
+  my_plan: MyText
+  active: false
+  active: false
+  user_id: 
