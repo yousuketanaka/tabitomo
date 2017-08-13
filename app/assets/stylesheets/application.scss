@@ -440,9 +440,11 @@ padding:0 0 0 15px;
 .profile-usermenu {
   margin-top: 30px;
   padding:0px !important;
+  border-bottom: 1px solid #f0f4f7;
 }
 
-.profile-usermenu ul li {
+.profile-usermenu ul li,
+.verifications ul li{
   border-bottom: 1px solid #f0f4f7;
 }
 
@@ -457,14 +459,10 @@ padding:0 0 0 15px;
   padding: 15px;
 }
 
-.profile-usermenu ul li a i {
-  margin-right: 8px;
-  font-size: 14px;
-}
-
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
   color: #5b9bd1;
+  border-left: 2px solid #5b9bd1;
 }
 
 .profile-usermenu ul li.active {
@@ -476,4 +474,37 @@ padding:0 0 0 15px;
   background-color: #f6f9fb;
   border-left: 2px solid #5b9bd1;
   margin-left: -2px;
+}
+
+.verifications{
+    margin-top: 30px;
+}
+
+.verifications p{
+    margin-top: 20px;
+    margin-left : 20px;
+    font-size: 15px;
+    color: #93a3b5;
+}
+
+
+.vertification-checked:before{
+  content: "\f00c";
+  font-family: FontAwesome;
+  position: relative;
+  z-index: 100;
+  top: 2px;
+  font-size: 1.55em;
+  text-align: center;
+  width: 1.25em;
+  color: #84a2d4;
+}
+
+
+.verifications ul li{
+    color: #93a3b5;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    list-style: none;
 }

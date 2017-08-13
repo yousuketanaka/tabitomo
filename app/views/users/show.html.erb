@@ -115,24 +115,27 @@
 								<span class="hidden-xs">PROFILE 管理</span>
 							</div>
 							<div class="profile-usertitle-job">
+								
 							</div>
 						</div>
 						<!-- END SIDEBAR USER TITLE -->
 						<!-- SIDEBAR MENU -->
 						<div class="profile-usermenu">
 							<ul class="nav">
-								<li class="active">
-									<%= link_to "プロフィール", user_path(current_user), class: "glyphicon glyphicon-home" %>
-								</li>
-								<li>
-									<%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %>
-								</li>
-								<li>
-								    <%= link_to "リスティング作成", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %>
-								</li>
+								<li class="active"><%= link_to "プロフィール", user_path(current_user), class: "glyphicon glyphicon-home" %></li>
+								<li><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %></li>
+								<li><%= link_to "リスティング作成", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %></li>
 							</ul>
 						</div>
 						<!-- END MENU -->
+						<div class="verifications hidden-xs hidden-sm">
+							<p><span class="glyphicon glyphicon-ok"></span>認証済みID</p>
+							<ul>
+								<li id="ver-email">メールアドレス</li>
+								<li id="ver-tel">電話番号</li>
+								<li id="ver-facebook">Facebook</li>
+								</ul>
+						</div>
 				</div><!--select-list-->
 			</div>
 		</div><!--row-->
