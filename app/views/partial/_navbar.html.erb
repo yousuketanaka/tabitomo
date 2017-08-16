@@ -15,7 +15,6 @@
       <ul class="nav navbar-nav navbar-right">
               <!-- ログインしていない時 -->
           <% if (!user_signed_in?) %>
-              <li><%= link_to "TABITOMO登録", listings_new_path %></li>
               <li><a href="#">利用の流れ</a></li>
               <li><%= link_to "アカウント作成", new_user_registration_path %></li>
               <li><%= link_to "ログイン", new_user_session_path %></li>

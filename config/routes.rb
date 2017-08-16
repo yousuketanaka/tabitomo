@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :listings
   
   get 'manage-listing/:id/basics' => 'listings#basics', as: 'manage_listing_basics'
+  get "manage-listing/:id/description" => "listings#description", as:"manage_listing_description"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813123845) do
+ActiveRecord::Schema.define(version: 20170816070616) do
 
   create_table "listings", force: :cascade do |t|
     t.string   "language_level_2"
@@ -27,8 +27,12 @@ ActiveRecord::Schema.define(version: 20170813123845) do
     t.text     "my_plan"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "use_language"
+    t.string   "use_language_level"
+    t.string   "residentcountry"
+    t.string   "residentcity"
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"
@@ -53,10 +57,7 @@ ActiveRecord::Schema.define(version: 20170813123845) do
     t.integer  "age"
     t.string   "sex"
     t.string   "nationality"
-    t.string   "resident_country"
-    t.string   "resident_city"
     t.string   "job"
-    t.string   "language_1"
     t.string   "phone_number"
     t.string   "description"
   end

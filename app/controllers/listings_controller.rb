@@ -32,9 +32,13 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
   
+  def description
+    @listing = Listing.find(params[:id])
+  end
+  
   private
   
   def listing_params
-    params.require(:listing).permit(:address, :service_type, :price_setting, :language_2, :language_level_2, :resident_years, :favorite_topic, :self_praise, :current_situation, :my_goal)
+    params.require(:listing).permit(:address, :service_type, :price_setting, :use_language, :residentcountry, :residentcity, :use_language_level, :language_2, :language_level_2, :resident_years, :favorite_topic, :self_praise, :current_situation, :my_goal)
   end
 end
