@@ -35,7 +35,7 @@
                           </div>
                           <div class="simple-info">
                           	<ul>
-                          		<li><span class="glyphicon glyphicon-map-marker"></span><%= @user.resident_city %></li>
+                          		<li><span class="glyphicon glyphicon-map-marker"></span><%= @user.nationality %></li>
                           		<li><span class="glyphicon glyphicon-briefcase"></span><%= @user.job %></li>
                           	</ul>
                           </div>
@@ -67,20 +67,8 @@
 							        <td>:<%= @user.nationality %></td>  
 			                      </tr>
 			                      <tr>
-			                        <td><span class="glyphicon glyphicon-home"></span>RESIDENT COUNTRY</td>
-						            <td>:<%= @user.resident_country %></td> 
-			                      </tr>
-			                      <tr>
-			                        <td><span class="glyphicon glyphicon-globe"></span>RESIDENT CITY</td>
-						            <td>:<%= @user.resident_city %></td> 
-			                      </tr>
-			                      <tr>
 			                        <td><span class="glyphicon glyphicon-briefcase"></span>OCCUPATION</td>
 							        <td>:<%= @user.job %></td>
-			                      </tr>
-			                      <tr>
-			                        <td><span class="glyphicon glyphicon-tint"></span>LANGUAGE</td>
-						            <td>:<%= @user.language_1 %></td>
 			                      </tr>
 			                      <tr>
 			                        <td><span class="glyphicon glyphicon-phone"></span> MOBILE</td>

@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_listing, only: [:basics, :description, :address, :price, :photos, :calendar, :bankaccount,:publish]
   
   def index
   end
@@ -29,14 +30,34 @@ class ListingsController < ApplicationController
   end
   
   def basics
-    @listing = Listing.find(params[:id])
   end
   
   def description
-    @listing = Listing.find(params[:id])
+  end
+  
+  def address
+  end
+  
+  def price
+  end
+  
+  def photos
+  end
+  
+  def calendar
+  end
+  
+  def bankaccount
+  end
+  
+  def publish
   end
   
   private
+  
+  def set_listing
+      @listing = Listing.find(params[:id])
+  end
   
   def listing_params
     params.require(:listing).permit(:address, :service_type, :price_setting, :use_language, :residentcountry, :residentcity, :use_language_level, :language_2, :language_level_2, :resident_years, :favorite_topic, :self_praise, :current_situation, :my_goal)

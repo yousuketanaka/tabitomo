@@ -8,7 +8,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="text-center">
-                    <span style="font-size:24px;">リスティング内容の編集</span>
+                    <span style="font-size:24px;">あなたのことを知ってもらいましょう。</span>
                 </div>
             </div>
 
@@ -19,22 +19,39 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>タイトル</label>
-                                <%= f.text_field :listing_title, placeholder: "リスティングタイトルを記載しましょう", class: "form-control", required: "true" %>
-                            </div>
+                                <label>私が得意な話</label>
+                                <%= f.text_area :self_praise, rows: 8, placeholder: "得意な話があれば、教えてください。", class: "form-control", required: "true" %>
+                            </div>                            
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>内容</label>
-                                <%= f.text_area :listing_content, rows: 8, placeholder: "リスティングの内容について記述してください", class: "form-control", required: "true" %>
+                                <label>私の自慢</label>
+                                <%= f.text_area :self_praise, rows: 8, placeholder: "自慢できることがあれば教えてください。", class: "form-control", required: "true" %>
                             </div>                            
                         </div>
                     </div>
-            
-
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>私の現在の状況</label>
+                                <%= f.text_area :current_situation, rows: 8, placeholder: "あなたは今、どんなことに夢中ですか、どんな気持ちですか、あなたの状況を教えてください。", class: "form-control", required: "true" %>
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>私が目指すもの</label>
+                                <%= f.text_area :current_situation, rows: 8, placeholder: "あなたが今目指しているものを教えてください。", class: "form-control", required: "true" %>
+                            </div>                            
+                        </div>
+                    </div>
+                    
                     <div class="actions">
                         <%= f.submit "更新", class: "btn btn-danger" %>
                     </div>
@@ -43,3 +60,9 @@
         </div>
     </div>
 </div>
+
+ "favorite_topic"
+ "self_praise"
+ "current_situation"
+ "my_goal"
+ "my_plan"

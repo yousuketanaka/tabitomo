@@ -180,9 +180,9 @@ body {
     border-top: 1px solid #ddd;
 }
 
-.sidebar-nav .navbar-toggle {
-    background-color: #337ab7;
-}
+// .sidebar-nav .navbar-toggle {
+//     background-color: #337ab7;
+// }
 
 .required{
   border: 1px solid #ec6d71;
@@ -553,10 +553,6 @@ padding:0 0 0 15px;
     border-top: 1px solid #ddd;
 }
 
-.sidebar-nav .navbar-toggle {
-    background-color: #337ab7;
-}
-
 
 input[type=checkbox] {
    display: none;
@@ -616,4 +612,24 @@ input[type=checkbox]:checked + .check_css:before {
 
 .scl-area{
     background-color: #fdeff2;
+}
+
+.verticalnav{
+    text-align: center;
+}
+
+.list-group-item{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.verticalnav .active,
+.verticalnav > .active:hover{
+    background-color: #a0d8ef;
+    border-color: #ddd;
+    border-left: 3px solid #008899;
+}
+
+.verticalnav li .active{
+    border-left: 3px solid #008899;
 }
