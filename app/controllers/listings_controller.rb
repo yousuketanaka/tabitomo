@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: [:basics, :description, :address, :price, :photos, :calendar, :bankaccount,:publish]
+  before_action :set_listing, only: [:update, :basics, :description, :address, :price, :photos, :calendar, :bankaccount,:publish]
   
   def index
   end
@@ -27,6 +27,10 @@ class ListingsController < ApplicationController
   end
 
   def update
+    @listing.update(listing_params)
+    if @listing
+      redirect_to :back, notice:"更新できました。"
+    end
   end
   
   def basics

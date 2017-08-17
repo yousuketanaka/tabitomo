@@ -406,10 +406,6 @@ body {
 }
 
 /* Profile sidebar */
-.profile-sidebar {
-  padding: 20px 0 10px 0;
-  background: #fff;
-}
 .col-md-3{
 padding:0 0 0 15px;
 }
@@ -443,45 +439,11 @@ padding:0 0 0 15px;
   font-weight: 600;
   margin-bottom: 15px;
 }
- 
-.profile-usermenu {
-  margin-top: 30px;
-  padding:0px !important;
-  border-bottom: 1px solid #f0f4f7;
-}
 
-.profile-usermenu ul li,
-.verifications ul li{
-  border-bottom: 1px solid #f0f4f7;
-}
 
-.profile-usermenu ul li:last-child {
-  border-bottom: none;
-}
 
-.profile-usermenu ul li a {
-  color: #93a3b5;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 15px;
-}
 
-.profile-usermenu ul li a:hover {
-  background-color: #fafcfd;
-  color: #5b9bd1;
-  border-left: 2px solid #5b9bd1;
-}
 
-.profile-usermenu ul li.active {
-  border-bottom: none;
-}
-
-.profile-usermenu ul li.active a {
-  color: #5b9bd1;
-  background-color: #f6f9fb;
-  border-left: 2px solid #5b9bd1;
-  margin-left: -2px;
-}
 
 .verifications{
     margin-top: 30px;
@@ -632,4 +594,13 @@ input[type=checkbox]:checked + .check_css:before {
 
 .verticalnav li .active{
     border-left: 3px solid #008899;
+}
+
+.actions{
+    margin: 15px 0px;
+}
+
+.list-group-item:first-child{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }

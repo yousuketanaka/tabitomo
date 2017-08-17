@@ -89,43 +89,30 @@
 				</div><!--profile-info-->
 			</div><!--col-md-8 col-sm-8 col-xs-12-->
 			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="select-list">
-					<div class="profile-sidebar">
-						<!-- SIDEBAR USERPIC -->
-						<div class="profile-userpic">
-							<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
-		                   
-		                    
-						</div>
-						<!-- END SIDEBAR USERPIC -->
-						<!-- SIDEBAR USER TITLE -->
-						<div class="profile-usertitle">
-							<div class="profile-usertitle-name">
-								<span class="hidden-xs">PROFILE 管理</span>
-							</div>
-							<div class="profile-usertitle-job">
-								
-							</div>
-						</div>
-						<!-- END SIDEBAR USER TITLE -->
-						<!-- SIDEBAR MENU -->
-						<div class="profile-usermenu">
-							<ul class="nav">
-								<li class="active"><%= link_to "プロフィール", user_path(current_user), class: "glyphicon glyphicon-home" %></li>
-								<li class="active"><%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %></li>
-								<li class="active"><%= link_to "リスティング作成", new_listing_path, class: "glyphicon glyphicon-user" %></li>
-							</ul>
-						</div>
-						<!-- END MENU -->
-						<div class="verifications hidden-xs hidden-sm">
-							<p><span class="glyphicon glyphicon-ok"></span>認証済みID</p>
-							<ul>
-								<li id="ver-email">メールアドレス</li>
-								<li id="ver-tel">電話番号</li>
-								<li id="ver-facebook">Facebook</li>
-								</ul>
-						</div>
-				</div><!--select-list-->
+				<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Panel heading</div>
+				  <!-- List group -->
+				  <ul class="list-group">
+				    <li class="list-group-item">
+						<%= link_to "プロフィール", user_path(current_user), class: "glyphicon glyphicon-home" %>
+					</li>
+					<li class="list-group-item">
+						<%= link_to "プロフィール編集", edit_user_registration_path(current_user), class: "glyphicon glyphicon-user" %>
+					</li>
+					<li class="list-group-item">
+						<%= link_to "リスティング作成", class: "glyphicon glyphicon-user" %>
+					</li>
+				  </ul>
+				  <div class="verifications hidden-xs hidden-sm">
+						<p><span class="glyphicon glyphicon-ok"></span>認証済みID</p>
+						<ul>
+							<li id="ver-email">メールアドレス</li>
+							<li id="ver-tel">電話番号</li>
+							<li id="ver-facebook">Facebook</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div><!--row-->
 	</div><!--container-->
