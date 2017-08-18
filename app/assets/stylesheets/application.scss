@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import "toastr";
 @import "font-awesome";
-
+@import "dropzone/dropzone";
 
 a {
   color: #222;
@@ -603,4 +603,27 @@ input[type=checkbox]:checked + .check_css:before {
 .list-group-item:first-child{
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+}
+
+// dropzone.jsのcss
+@media (max-width: 768px){
+  .dz-preview, .dz-processing, .dz-image-preview, .dz-error, .dz-complete {
+      margin: 10px 0!important;
+      width: 100%;
+  }
+  .dropzone .dz-preview .dz-image {
+    width: 100%;   
+  }
+  .dropzone .dz-preview .dz-image img {
+    height: 120px;    
+  }
+}
+
+.dropzone .dz-preview .dz-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.dropzone.dz-started .dz-message {
+  display: block;
 }
