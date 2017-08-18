@@ -18,6 +18,7 @@ gem 'countries'
 gem "font-awesome-rails"
 gem "paperclip", "~> 5.0.0"
 gem 'dropzonejs-rails'
+gem "figaro", "~>1.1.0"
 
 
 group :development, :test do
