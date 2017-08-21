@@ -17,16 +17,21 @@
                   <%= form_for @listing do |f| %>
                     <hr>
 				    <div class="form-group">
-				    	 <p><span class="glyphicon glyphicon-triangle-right"><strong>私ができるサービス</strong></p>
-						 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
-						 <label for="hp" class="check_css">カフェトーク</label>
-						 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
-						 <label for="hp" class="check_css">一緒にお食事</label>
-						 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
-						 <label for="hp" class="check_css">一緒にお出かけ</label>
-						 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
-						 <label for="hp" class="check_css">しっかりガイド</label>
-					</div>
+					    	 <p><span class="glyphicon glyphicon-triangle-right"><strong>私ができるサービス</strong></p>
+					    	 
+							 <%= check_box :service_type, {:value => 'カフェトーク', :class => "checkbox"}, :id => "hp" %>
+							 <label for="hp" class="check_css">カフェトーク</label>
+							 
+							 <%= check_box :service_type, {:value => '一緒にお食事', :class => "checkbox"}, :id => "hp" %>
+							 <label for="hp" class="check_css">一緒にお食事</label>
+							 
+							 <%= check_box :service_type, {:value => '一緒にお出かけ',:class => "checkbox"}, :id => "hp" %>
+							 <label for="hp" class="check_css">一緒にお出かけ</label>
+							 
+							 <%= check_box :service_type, {:value => 'しっかりガイド',:class => "checkbox"}, :id => "hp" %>
+							 <label for="hp" class="check_css">しっかりガイド</label>
+							 
+						</div>
 					<hr>
 					<br>
 					
@@ -54,7 +59,7 @@
 						<div class="col-md-12 select">
 							<div class="form-group">
 								<label><span class="glyphicon glyphicon-triangle-right">居住年数</label><br>
-								<%= f.select :resident_years, (18..99), {prompt:"居住年数を選択してください"}, {required: 'true', autofocus: 'true', class: "form-control" } %>
+								<%= f.select :resident_years, (1..99), {prompt:"居住年数を選択してください"}, {required: 'true', autofocus: 'true', class: "form-control" } %>
 							</div>
 						</div>
 					</div>

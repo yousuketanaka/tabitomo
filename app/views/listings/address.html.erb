@@ -24,6 +24,9 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <h4>My Google Maps</h4>
+                    <div id="map"></div>
 
                     <div class="actions">
                         <%= f.submit "更新", class: "btn btn-danger" %>
@@ -33,3 +36,22 @@
         </div>
     </div>
 </div>
+
+
+
+<script>
+  function initMap() {
+    var uluru = {lat: <%=@listing.latitude %>, lng: <%=@listing.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUH0GAPxrsmJwe--8-vQZcokwg2N7GX9o&callback=initMap">
+</script>

@@ -1,6 +1,7 @@
 <%= render 'partial/navbar' %>
 <div class="container">
 	<div class="row">
+		
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -15,14 +16,18 @@
 					    <hr>
 					    <div class="form-group">
 					    	 <p><span class="glyphicon glyphicon-triangle-right"><strong>私ができるサービス</strong></p>
-							 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
+							 <%= check_box :service_type, {:value => 'カフェトーク' :class => "checkbox"}, :id => "hp" %>
 							 <label for="hp" class="check_css">カフェトーク</label>
-							 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
+							 
+							 <%= check_box :service_type, {:value => '一緒にお食事', :class => "checkbox"}, :id => "hp" %>
 							 <label for="hp" class="check_css">一緒にお食事</label>
-							 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
+							 
+							 <%= check_box :service_type, {:value => '一緒にお出かけ',:class => "checkbox"}, :id => "hp" %>
 							 <label for="hp" class="check_css">一緒にお出かけ</label>
-							 <%= check_box :service_type, {:class => "checkbox"}, :checked => false, :id => "hp" %>
+							 
+							 <%= check_box :service_type, {:value => 'しっかりガイド',:class => "checkbox"}, :id => "hp" %>
 							 <label for="hp" class="check_css">しっかりガイド</label>
+							 
 						</div>
 						<hr>
 						<br>
@@ -42,6 +47,16 @@
 								<div class="form-group">
 									<label><span class="glyphicon glyphicon-triangle-right">居住都市</label><br>
 									<%= f.text_field :residentcity, autofocus: true, :placeholder => "使用できる言語を1つ書いてください。", :class => 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<br>
+						
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label><span class="glyphicon glyphicon-triangle-right">居住年数</label><br>
+									<%= f.select :resident_years, (1..50), {prompt:"居住年数を選択してください"}, {required: 'true', autofocus: 'true', class: "form-control" } %>
 								</div>
 							</div>
 						</div>

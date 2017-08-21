@@ -19,6 +19,8 @@ gem "font-awesome-rails"
 gem "paperclip", "~> 5.0.0"
 gem 'dropzonejs-rails'
 gem "figaro", "~>1.1.0"
+gem 'bxslider-rails', "~>4.2.5.1"
+gem 'geocoder'
 
 
 group :development, :test do
