@@ -1,6 +1,17 @@
-<div class="panel panel-default">
+<div class="panel panel-success">
   <!-- Default panel contents -->
-  <div class="verticalnav panel-heading">Panel heading</div>
+  <div class="verticalnav panel-heading"><strong>表示画面へ</strong></div>
+  <!-- List group -->
+  <ul class="verticalnav list-group">
+    <li class="display list-group-item">
+      <%= link_to "確認する", listing_path(@listing) %>
+    </li>
+  </ul>
+</div>
+
+<div class="panel panel-warning">
+  <!-- Default panel contents -->
+  <div class="verticalnav panel-heading"><strong>表示の編集</strong></div>
   <!-- List group -->
   <ul class="verticalnav list-group">
     <li class="<%= 'active' if controller?("listings") && action?("basics") %> list-group-item">
@@ -13,13 +24,13 @@
       <%= link_to "住所情報", manage_listing_address_path(@listing) %>
     </li>
     <li class="<%= "active" if controller?("listings") && action?("price") %> list-group-item">
-      <%= link_to "料金", manage_listing_price_path(@listing) %>
+      <%= link_to "料金設定", manage_listing_price_path(@listing) %>
     </li>
     <li class="<%= "active" if controller?("listings") && action?("photos") %> list-group-item">
-      <%= link_to "写真", manage_listing_photos_path(@listing), "data-turbolinks": "false" %>
+      <%= link_to "イメージ写真の設定", manage_listing_photos_path(@listing), "data-turbolinks": "false" %>
     </li>
     <li class="<%= "active" if controller?("listings") && action?("calendar") %> list-group-item">
-      <%= link_to "カレンダー", manage_listing_calendar_path(@listing) %>
+      <%= link_to "予約画面の設定", manage_listing_calendar_path(@listing) %>
     </li>
     <li class="<%= "active" if controller?("listings") && action?("bankaccount") %> list-group-item">
       <%= link_to "受取口座情報", manage_listing_bankaccount_path(@listing) %>

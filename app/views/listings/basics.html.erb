@@ -15,25 +15,6 @@
     
               <div class="panel-body">           
                   <%= form_for @listing do |f| %>
-                    <hr>
-				    <div class="form-group">
-					    	 <p><span class="glyphicon glyphicon-triangle-right"><strong>私ができるサービス</strong></p>
-					    	 
-							 <%= check_box :service_type, {:value => 'カフェトーク', :class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">カフェトーク</label>
-							 
-							 <%= check_box :service_type, {:value => '一緒にお食事', :class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">一緒にお食事</label>
-							 
-							 <%= check_box :service_type, {:value => '一緒にお出かけ',:class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">一緒にお出かけ</label>
-							 
-							 <%= check_box :service_type, {:value => 'しっかりガイド',:class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">しっかりガイド</label>
-							 
-						</div>
-					<hr>
-					<br>
 					
 					<div class="row">
 						<div class="col-md-12 select">

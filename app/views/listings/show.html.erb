@@ -37,19 +37,19 @@
                     <div class="row row-space-top-4">
                         <div class="col-sm-3 col-xs-3 text-center">
                             <i class="fa fa-home fa-3x"></i>
-                            <h5><%= @listing.service_type %></h5>
-                        </div>
-                        <div class="col-sm-3 col-xs-3 text-center">
-                            <i class="fa fa-linux fa-3x" aria-hidden="true"></i>
                             <h5><%= @listing.residentcountry %></h5>
                         </div>
                         <div class="col-sm-3 col-xs-3 text-center">
-                            <i class="fa fa-bug fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-linux fa-3x" aria-hidden="true"></i>
                             <h5><%= @listing.residentcity %></h5>
                         </div>
                         <div class="col-sm-3 col-xs-3 text-center">
                             <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
-                            <h5><%= @listing.resident_years %>年</h5>
+                            <h5><%= @listing.use_language %></h5>
+                        </div>
+                        <div class="col-sm-3 col-xs-3 text-center">
+                            <i class="fa fa-bug fa-3x" aria-hidden="true"></i>
+                            <h5><%= @listing.use_language_level %></h5>
                         </div>
                     </div>
                 </div>
@@ -77,29 +77,11 @@
 <!-- メインコンテント -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h3 class="row-space-3">このリスティングについて</h3>
+        <div class="col-md-8 col-md-offset-2">
+            <h3 class="row-space-3"><%= @listing.plan_title %></h3>
                 <p></p>
         </div>
-
-        <div class="col-md-4">
-            
-        </div>
     </div>  
-
-
-    <!-- レビュー    -->
-    <div class="row">
-        <div class="col-md-8">
-            <h3 class="row-space-3"></h3>
-            <div id="map"></div>
-        </div>
-
-        <div class="col-md-4">
-        
-        </div>
-    </div>
-
 </div>
 
 
