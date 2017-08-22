@@ -670,3 +670,67 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+//listing show page
+
+.show-main{
+    background-color: #fff;
+}
+
+.s-page{
+    margin-top: 3em;
+}
+
+.s-page h4{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.plan-title{
+    font-family: 'Yu Gothic';
+    line-height: 170%;
+    color: black;
+}
+
+.double-line{
+    color: #364e96;/*文字色*/
+    padding: 0.5em 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+}
+
+.description-space{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.meethere{
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: transparent;/*背景透明に*/
+    border-left: solid 5px #7db4e6;/*左線*/
+}
+
+.table-title{
+    width: 35%;
+}
+
+.title-line{
+    border-bottom: 3px solid #fdeff2;
+}
+
+.self-detail{
+    border: 2px dotted #f2a0a1;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.intro-content h5{
+    margin-top: 35px;
+    text-align: center;
+    color: #010079;
+    text-shadow: 0 0 5px white;
+    padding: 0.3em 0.5em;
+    background: -webkit-repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}

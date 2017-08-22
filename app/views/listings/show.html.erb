@@ -75,57 +75,102 @@
 </div>
 
 <!-- メインコンテント -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h3 class="row-space-3"><%= @listing.plan_title %></h3>
-                <p></p>
-        </div>
-    </div>  
+<div class="show-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 s-page">
+                <h2 class="row-space-3 double-line"><span class="plan-title"><%= @listing.plan_title %></span></h2>
+                <br>
+                <h4><span class="title-line"><%= fa_icon "plane", text: "プランの詳細", left: true %></span></h4>
+                <p class="description-space"><%= @listing.plan_detail %></p>
+                <p class="description-space"><span class="meethere"><%= link_to "Click here! こんなお店でお会いしましょう。", @listing.shop_info %></span></p>
+                
+                <h4><span class="title-line"><%= fa_icon "plane", text: "イメージ画像", left: true %></span></h4>
+                <ul class="bxslider">
+                  <li></li>
+                </ul>
+                <br>
+                <h4><span class="title-line"><%= fa_icon "plane", text: "説明", left: true %></span></h4>
+                <div class="description_table">
+                    <table class="table table-hover">
+                      <tbody>
+                          <% if @listing.guide_detail %>      
+                              <tr>
+                                  <td class="table-title">ガイド詳細</td>
+                                  <td><%= @listing.guide_detail %>時間</td>
+                              </tr>
+                          <% end %>
+                          <tr>
+                              <td class="table-title">最大受け入れ人数</td>
+                              <td><%= @listing.acceptable %>名</td>
+                          </tr>
+                          <tr>
+                              <td class="table-title">所要時間</td>
+                              <td><%= @listing.plan_time %>時間</td>
+                          </tr>
+                          <tr>
+                              <td class="table-title">私ができること、できないこと</td>
+                              <td><%= @listing.capacity %></td>
+                          </tr>
+                          <tr>
+                              <td class="table-title">キャンセルポリシー</td>
+                              <td><%= @listing.cancel_policy %>時間</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                </div>
+                
+                <h4><span class="title-line"><%= fa_icon "plane", text: "待ち合わせ場所", left: true %></span></h4>
+                <div id="map"></div>
+                
+                
+                <div class="self-intro">
+                    <h4><span class="title-line"><%= fa_icon "plane", text: "私はこんな人", left: true %></span></h4>
+                    
+                    <div class="intro-content">
+                        <h5><strong>私が得意な話</strong></h5>
+                        <p class="self-detail"><%= @listing.favorite_topic %></p>
+                        
+                        <h5><strong>私の自慢</strong></h5>
+                        <p class="self-detail"><%= @listing.self_praise %></p>
+                        
+                        <h5><strong>私の現在の状況</strong></h5>
+                        <p class="self-detail"><%= @listing.current_situation %></p>
+                        
+                        <h5><strong>私が目指すもの</strong></h5>
+                        <p class="self-detail"><%= @listing.my_goal %></p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
 </div>
 
 
-<script type="text/javascript">
-$('.bxslider').bxSlider({
-  mode: 'fade',
-  auto: true,
-  autoControls: true,
-  pause: 5000
-});
-</script>
-
-
 
 <script type="text/javascript">
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 2,
-      center: new google.maps.LatLng(2.8,-187.3),
-      mapTypeId: 'terrain'
+    $('.bxslider').bxSlider({
+    mode: 'fade',
+    auto: true,
+    autoControls: true,
+    pause: 5000
     });
+</script>
 
-    // Create a <script> tag and set the USGS URL as the source.
-    var script = document.createElement('script');
-    // This example uses a local copy of the GeoJSON stored at
-    // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-    script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
-
-  // Loop through the results array and place a marker for each
-  // set of coordinates.
-  window.eqfeed_callback = function(results) {
-    for (var i = 0; i < results.features.length; i++) {
-      var coords = results.features[i].geometry.coordinates;
-      var latLng = new google.maps.LatLng(coords[1],coords[0]);
-      var marker = new google.maps.Marker({
-        position: latLng,
-        map: map
-      });
-    }
+<script type="text/javascript">
+  function initMap() {
+    var uluru = {lat: <%=@listing.latitude %>, lng: <%=@listing.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
   }
 </script>
+
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUH0GAPxrsmJwe--8-vQZcokwg2N7GX9o&callback=initMap">
 </script>
