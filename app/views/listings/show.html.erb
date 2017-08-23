@@ -79,68 +79,82 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 s-page">
-                <h2 class="row-space-3 double-line"><span class="plan-title"><%= @listing.plan_title %></span></h2>
-                <br>
-                <h4><span class="title-line"><%= fa_icon "plane", text: "プランの詳細", left: true %></span></h4>
-                <p class="description-space"><%= @listing.plan_detail %></p>
-                <p class="description-space"><span class="meethere"><%= link_to "Click here! こんなお店でお会いしましょう。", @listing.shop_info %></span></p>
-                
-                <h4><span class="title-line"><%= fa_icon "plane", text: "イメージ画像", left: true %></span></h4>
-                <ul class="bxslider">
-                  <li></li>
-                </ul>
-                <br>
-                <h4><span class="title-line"><%= fa_icon "plane", text: "説明", left: true %></span></h4>
-                <div class="description_table">
-                    <table class="table table-hover">
-                      <tbody>
-                          <% if @listing.guide_detail %>      
-                              <tr>
-                                  <td class="table-title">ガイド詳細</td>
-                                  <td><%= @listing.guide_detail %>時間</td>
-                              </tr>
-                          <% end %>
-                          <tr>
-                              <td class="table-title">最大受け入れ人数</td>
-                              <td><%= @listing.acceptable %>名</td>
-                          </tr>
-                          <tr>
-                              <td class="table-title">所要時間</td>
-                              <td><%= @listing.plan_time %>時間</td>
-                          </tr>
-                          <tr>
-                              <td class="table-title">私ができること、できないこと</td>
-                              <td><%= @listing.capacity %></td>
-                          </tr>
-                          <tr>
-                              <td class="table-title">キャンセルポリシー</td>
-                              <td><%= @listing.cancel_policy %>時間</td>
-                          </tr>
-                      </tbody>
-                    </table>
-                </div>
-                
-                <h4><span class="title-line"><%= fa_icon "plane", text: "待ち合わせ場所", left: true %></span></h4>
-                <div id="map"></div>
-                
-                
-                <div class="self-intro">
-                    <h4><span class="title-line"><%= fa_icon "plane", text: "私はこんな人", left: true %></span></h4>
+                <div class="self-info-part">
+                    <h2 class="row-space-3 double-line"><span class="plan-title"><%= @listing.plan_title %></span></h2>
+                    <br>
+                    <h4><span class="title-line"><%= fa_icon "plane", text: "プランの詳細", left: true %></span></h4>
+                    <p class="description-space"><%= @listing.plan_detail %></p>
+                    <p class="description-space"><span class="meethere"><%= link_to "Click here! こんなお店でお会いしましょう。", @listing.shop_info %></span></p>
                     
-                    <div class="intro-content">
-                        <h5><strong>私が得意な話</strong></h5>
-                        <p class="self-detail"><%= @listing.favorite_topic %></p>
-                        
-                        <h5><strong>私の自慢</strong></h5>
-                        <p class="self-detail"><%= @listing.self_praise %></p>
-                        
-                        <h5><strong>私の現在の状況</strong></h5>
-                        <p class="self-detail"><%= @listing.current_situation %></p>
-                        
-                        <h5><strong>私が目指すもの</strong></h5>
-                        <p class="self-detail"><%= @listing.my_goal %></p>
+                    <h4><span class="title-line"><%= fa_icon "plane", text: "イメージ画像", left: true %></span></h4>
+                    <ul class="bxslider">
+                      <li></li>
+                    </ul>
+                    <br>
+                    <h4><span class="title-line"><%= fa_icon "plane", text: "説明", left: true %></span></h4>
+                    <div class="description_table">
+                        <table class="table table-bordered">
+                          <tbody>
+                              <% if @listing.guide_detail %>      
+                                  <tr>
+                                      <td class="table-title">ガイド詳細</td>
+                                      <td class="table-detail"><%= @listing.guide_detail %>時間</td>
+                                  </tr>
+                              <% end %>
+                              <tr>
+                                  <td class="table-title">最大受け入れ人数</td>
+                                  <td class="table-detail"><%= @listing.acceptable %>名</td>
+                              </tr>
+                              <tr>
+                                  <td class="table-title">所要時間</td>
+                                  <td class="table-detail"><%= @listing.plan_time %>時間</td>
+                              </tr>
+                              <tr>
+                                  <td class="table-title">私ができること、できないこと</td>
+                                  <td class="table-detail"><%= @listing.capacity %></td>
+                              </tr>
+                              <tr>
+                                  <td class="table-title">キャンセルポリシー</td>
+                                  <td class="table-detail"><%= @listing.cancel_policy %>時間</td>
+                              </tr>
+                          </tbody>
+                        </table>
                     </div>
-                </div>
+                    
+                    <h4><span class="title-line"><%= fa_icon "plane", text: "待ち合わせ場所", left: true %></span></h4>
+                    <div id="map"></div>
+                    
+                    
+                    <div class="self-intro">
+                        <h4><span class="title-line"><%= fa_icon "plane", text: "自己紹介", left: true %></span></h4>
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs">
+                                <%= link_to user_path(@listing.user) do %>
+                                    <%= image_tag @listing.user.image,class:"img-circle profile-2" %>
+                                <% end %>
+                            </div>
+                            <div class="col-sm-5 hidden-xs">
+                                <p class="i-am">私はこんな人です。</p>
+                            </div>
+                        </div>
+                        <div class="intro-content">
+                            <h5><strong>私が得意な話</strong></h5>
+                            <p class="self-detail"><%= @listing.favorite_topic %></p>
+                            
+                            <h5><strong>私の自慢</strong></h5>
+                            <p class="self-detail"><%= @listing.self_praise %></p>
+                            
+                            <h5><strong>私の現在の状況</strong></h5>
+                            <p class="self-detail"><%= @listing.current_situation %></p>
+                            
+                            <h5><strong>私が目指すもの</strong></h5>
+                            <p class="self-detail"><%= @listing.my_goal %></p>
+                        </div><!--intro-content-->
+                    </div><!--self-intro-->
+                </div><!--self-info-part-->
+                <div class="customer-comment-part">
+                    
+                </div><!--customer-comment-part-->
             </div>
         </div>  
     </div>

@@ -695,8 +695,8 @@ html, body {
 .double-line{
     color: #364e96;/*文字色*/
     padding: 0.5em 0;/*上下の余白*/
-    border-top: solid 3px #364e96;/*上線*/
-    border-bottom: solid 3px #364e96;/*下線*/
+    border-top: solid 3px #ee827c;/*上線*/
+    border-bottom: solid 3px #ee827c;/*下線*/
 }
 
 .description-space{
@@ -708,29 +708,60 @@ html, body {
     padding: 0.25em 0.5em;/*上下 左右の余白*/
     color: #494949;/*文字色*/
     background: transparent;/*背景透明に*/
-    border-left: solid 5px #7db4e6;/*左線*/
+    border-left: solid 5px #ee827c;/*左線*/
 }
 
 .table-title{
     width: 35%;
 }
 
-.title-line{
-    border-bottom: 3px solid #fdeff2;
+// .title-line{
+//     border-left: 3px solid #ee827c;
+// }
+
+.title-line i{
+    color: #ee827c;
 }
 
 .self-detail{
     border: 2px dotted #f2a0a1;
     border-radius: 15px;
     padding: 10px;
+    line-height: 200%;
 }
 
 .intro-content h5{
     margin-top: 35px;
     text-align: center;
-    color: #010079;
-    text-shadow: 0 0 5px white;
+    color: #302833;
+    text-shadow: 0px 0px 7px rgba(255, 150, 150, 1);
     padding: 0.3em 0.5em;
-    background: -webkit-repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-    background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: -webkit-repeating-linear-gradient(-45deg, #fdeff2, #fdeff2 3px,#f5b1aa 3px, #f5b1aa 7px);
+    background: repeating-linear-gradient(-45deg, #fdeff2, #fdeff2 3px,#f5b1aa 3px, #f5b1aa 7px);
+}
+
+.description_table td{
+    line-height: 200% !important;
+}
+
+.i-am{
+    width:100%;
+    background: #f5b1aa;
+    border-radius: 35px;
+    padding: 40px;
+    position:relative;
+    color:#fff;
+    font-size: 20px;
+}
+
+/*擬似要素:after*/
+.i-am:after {
+    content: ' ';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border:10px solid transparent;
+    border-right-color: #f5b1aa;
+    top:25%;
+    right:100%;
 }
