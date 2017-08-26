@@ -66,6 +66,6 @@ class ListingsController < ApplicationController
   end
   
   def listing_params
-    params.require(:listing).permit(:plan_title, :plan_detail, :shop_info, :acceptable, :plan_time, :guide_detail, :cancel_policy, :capacity, :address, :service_type, :price_setting, :use_language, :residentcountry, :residentcity, :use_language_level, :language_2, :language_level_2, :resident_years, :favorite_topic, :self_praise, :current_situation, :my_goal)
+    params.require(:listing).permit(:listing_image, :plan_title, :plan_detail, :shop_info, :acceptable, :plan_time, :guide_detail, :cancel_policy, :capacity, :address, :service_type, :price_setting, :use_language, :residentcountry, :residentcity, :use_language_level, :language_2, :language_level_2, :resident_years, :favorite_topic, :self_praise, :current_situation, :my_goal)
   end
 end
