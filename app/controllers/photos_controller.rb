@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  
     def create
         @photo = Photo.new(photo_params)
         if @photo.save
@@ -35,6 +36,6 @@ class PhotosController < ApplicationController
 
     private
     def photo_params
-        params.require(:photo).permit(:image,:listing_id)
+        params.require(:photo).permit(:image,:listing_id,:listing_image)
     end
 end

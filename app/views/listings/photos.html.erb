@@ -8,12 +8,13 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="text-center">
-                    <span style="font-size:24px;">リスティング写真の編集</span>
+                    <span style="font-size:24px;">リスティング写真のアップ</span>
                 </div>
             </div>
 
-            <div class="panel-body">          
-                <%= form_for @photo, html:{multipart: true,class:"dropzone", id:"my-dropzone", required: "true" } do |f| %> 
+            <div class="panel-body">
+                <h5><span class="glyphicon glyphicon-picture" aria-hidden="true">サンプル画像のアップ</h5>
+                <%= form_for @photo, html:{multipart: true, class:"dropzone", id:"my-dropzone", required: "true" } do |f| %> 
                     
                     <%= f.hidden_field :listing_id, value: @listing.id %>
                     <div class="dz-message needsclick">
@@ -25,12 +26,16 @@
                         <%= f.file_field :image %>
                         <%= f.submit "Upload image" %>
                     </div>
-
+                    
                 <% end %>
             </div>
+            
         </div>
     </div>
 </div>
+
+
+
 <!-- dropzone.js -->
 <script type="text/javascript">
   $(function () {

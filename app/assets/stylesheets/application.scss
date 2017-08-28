@@ -14,7 +14,7 @@ body {
     background-color: #fbfaf5;
 }
 
-.jumbotron {
+.image-space {
   padding-top: 0px;
   // 背景画像を暗くする
   background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05) ), url(tb2.jpg);
@@ -69,6 +69,7 @@ body {
     background: #fff;
     border-color: #fff;
     z-index: 10;
+    margin-bottom: 0px;
 }
 
 .navbar-devise .navbar-nav > li > a {
@@ -777,4 +778,42 @@ html, body {
 	border-right-color: #f5cbd9;
 	border-width: 22px;
 	margin-top: -22px;
+}
+
+.file_photo{
+    width: 50%;
+}
+
+// .file_photo input{
+//     display: none;
+// }
+
+.listing-image{
+    margin-top: 30px;
+}
+
+.top-photo-image{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.top-photo-image img{
+    width: 100%;
+    height: auto;
+   /*画像のセンタリング（中央寄せ）*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.row-space-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }

@@ -17,31 +17,21 @@
                 <%= form_for @listing do |f| %>
                     <hr>
 				    <div class="form-group">
-					    	 <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><strong>プランの種類</strong></p>
-					    	 
-							 <%= check_box :service_type, {:value => 'カフェトーク', :class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">カフェトーク</label>
+				    	 <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><strong>プランの種類</strong></p>
+				    	 
+						 <%= check_box :service_type, {:value => 'カフェトーク', :class => "checkbox"}, :id => "hp" %>
+						 <label for="hp" class="check_css">カフェトーク</label>
+						 
+						 <%= check_box :service_type, {:value => '一緒にお食事', :class => "checkbox"}, :id => "hp" %>
+						 <label for="hp" class="check_css">一緒にお食事</label>
+						 
+						 <%= check_box :service_type, {:value => '一緒にお出かけ',:class => "checkbox"}, :id => "hp" %>
+						 <label for="hp" class="check_css">一緒にお出かけ</label>
+						 
+						 <%= check_box :service_type, {:value => 'しっかりガイド',:class => "checkbox"}, :id => "hp" %>
+						 <label for="hp" class="check_css">しっかりガイド</label>
 							 
-							 <%= check_box :service_type, {:value => '一緒にお食事', :class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">一緒にお食事</label>
-							 
-							 <%= check_box :service_type, {:value => '一緒にお出かけ',:class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">一緒にお出かけ</label>
-							 
-							 <%= check_box :service_type, {:value => 'しっかりガイド',:class => "checkbox"}, :id => "hp" %>
-							 <label for="hp" class="check_css">しっかりガイド</label>
-							 
-						</div>
-					<hr>
-					
-					<div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>イメージ画像</label>
-                                <%= f.file_field :listing_image, class: 'form-control',  required: "true" %>
-                            </div>
-                        </div>
-                    </div>
+					</div>
                     
                     <hr>
 					
